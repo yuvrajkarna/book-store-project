@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
+import { BASE_URL } from "../baseurl.js";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -13,7 +14,7 @@ const BookDetails = () => {
   useEffect(() => {
     // Fetch book details when the component mounts
     axios
-      .get(`http://localhost:5000/books/${id}`)
+      .get(`${BASE_URL}/books/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);

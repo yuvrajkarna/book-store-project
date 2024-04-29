@@ -11,19 +11,21 @@ app.use(express.json());
 
 //Middlewares for handling CORS policy of browser
 // option 1:
-app.use(cors());
+// app.use(cors());
+
 // option 2: (More controlled version)
-// app.use(
-//   cors({
-//     origin: 'http://localhost:3000',
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     allowedHeaders: ['Content-Type'],
-//   })
-// );
+app.use(
+  cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
+    credentials: true
+  })
+);
 
 // get Route
 app.get("/", (req, res) => {
-  res.status(234).send("Welcome To MERN Book Store Project.");
+  res.status(200).send("Welcome To MERN Book Store Project.");
 });
 //all routes here
 app.use("/books", bookRoute);

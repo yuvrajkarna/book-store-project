@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://book-store-project-api.vercel.app'
