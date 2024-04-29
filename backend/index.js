@@ -16,7 +16,7 @@ app.use(express.json());
 // option 2: (More controlled version)
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://book-store-project-client.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type'],
     credentials: true
