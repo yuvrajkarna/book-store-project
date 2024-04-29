@@ -29,7 +29,7 @@ const BookDetails = () => {
     setLoading(true);
 
     axios
-      .delete(`http://localhost:5000/books/${id}`)
+      .delete(`${BASE_URL}/books/${id}`)
       .then(() => {
         setLoading(false);
         navigate("/");
